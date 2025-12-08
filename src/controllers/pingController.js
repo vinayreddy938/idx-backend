@@ -1,4 +1,3 @@
-export const pingCheck = async (req,res)=>{
-    res.json({message:"pong"});
-
-}
+export const pingCheck = async (req, res) => {
+  res.json({ message: 'pong' });
+};
