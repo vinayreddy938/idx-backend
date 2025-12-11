@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
-app.use('/', Router);
+app.use('/api', Router);
 
 app.listen(PORT, () => {
   console.log(`server started ${PORT}`);
