@@ -1,4 +1,4 @@
-import { createProjectService } from '../service/projectService.js';
+import { createProjectService, getProjectStructure } from '../service/projectService.js';
 
 export const createProjectController = async (req,res) => {
   const projectId = await createProjectService();
@@ -8,3 +8,11 @@ export const createProjectController = async (req,res) => {
     data: projectId,
   });
 };
+export const getProjectController = async(req,res)=>{
+  const tree = await getProjectStructure(req.params.projectId);
+  return res.status(200).json({
+    data:tree,
+    sucess:true,
+    message:"sucessfu;;y fetched the tree"
+  })
+}
